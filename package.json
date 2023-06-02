@@ -1,0 +1,17 @@
+{
+  "name": "node-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js --watch",
+    "dev": "concurrently \"npm run start\" \"npm run server\" \"yarn run start\" \"yarn run server\" nodemon server.js"
+  },
+  "author": "Jayson Lauza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
