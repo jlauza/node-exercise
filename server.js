@@ -1,8 +1,8 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
-
-const path = require("path");
+const port = 3000;
 
 // Entry point for the app
 app.get("/", (req, res) => {
@@ -12,11 +12,12 @@ app.get("/", (req, res) => {
 });
 
 // Route for the admin section
-// app.use("/admin", require("./admin/src/index"));
+// Serve static files
+app.use(express.static(path.join(__dirname, "admin", "public")));
+
+// Route handler for serving the React app
 app.get("/admin", (req, res) => {
-  // res.send("Please login");
-  const filePath = path.join(__dirname, "/admin/src/index.tsx");
-  res.sendFile(filePath);
+  res.sendFile(path.join(__dirname, "admin", "public", "index.html"));
 });
 
 // Route for the user section
