@@ -3,8 +3,7 @@ FROM node:16.18.0 as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN yarn install
-COPY . .
-RUN yarn run build
+COPY . .    
 
 # Production stage
 FROM node:16.18.0-alpine
