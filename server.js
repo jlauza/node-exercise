@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-// Entry point for the app
+// Entry point for the app - Route to Home page
 app.get("/", (req, res) => {
   // const filePath = path.join(__dirname, "index.html");
   const filePath = path.join(
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
   res.sendFile(filePath);
 });
 
+// Route to Auth page
 app.get("/auth", (req, res) => {
   const filePath = path.join(
     __dirname,
