@@ -7,13 +7,25 @@ const port = 3000;
 // Entry point for the app
 app.get("/", (req, res) => {
   // const filePath = path.join(__dirname, "index.html");
-  const filePath = path.join(__dirname, "public", "home", "index.html");
+  const filePath = path.join(
+    __dirname,
+    "public",
+    "views",
+    "home",
+    "index.html"
+  );
   res.sendFile(filePath);
 });
 
 app.get("/auth", (req, res) => {
-  const filePathHome = path.join(__dirname, "public", "auth", "index.html");
-  res.sendFile(filePathHome);
+  const filePath = path.join(
+    __dirname,
+    "public",
+    "views",
+    "auth",
+    "index.html"
+  );
+  res.sendFile(filePath);
 });
 
 // Start server
