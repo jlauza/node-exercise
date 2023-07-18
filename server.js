@@ -6,7 +6,6 @@ const port = 3000;
 
 // Entry point for the app - Route to Home page
 app.get("/", (req, res) => {
-  // const filePath = path.join(__dirname, "index.html");
   const filePath = path.join(
     __dirname,
     "public",
